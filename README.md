@@ -1,3 +1,2 @@
-Group 23 Contact Manager
-
+**Group 23 Contact Manager**
 Small Project for POOSD
