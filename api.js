@@ -16,8 +16,39 @@ function doLogin()
 	let tmp = {
 		username: username,
 		password: password
+	};
+	let jsonPayload = JSON.stringify(tmp);
+	let url = urlBase + "/Login." + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				if( userId < 1 )
+				{		
+					return;
+				}
+
+				saveCookie();
+	
+				window.location.href = "SignUPPage.html";
+			}
+		};
+		xhr.send(jsonPayload);
 	}
-	console.log(tmp);
+	catch(err)
+	{
+		return;
+	}
+
 }
 
 function saveCookie()
