@@ -47,7 +47,7 @@ function doLogin()
 
 				// // saveCookie();
 	
-				// window.location.href = "SignUPPage.html";
+				window.location.href = "SignUPPage.html";
 			}
 		};
 		xhr.send(jsonPayload);
