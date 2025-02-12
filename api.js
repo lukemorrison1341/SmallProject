@@ -14,48 +14,48 @@ function doLogin()
 	let username = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
 //	var hash = md5( password );
-	
-	document.getElementById("loginResult").innerHTML = "";
 
 	let tmp = {username:username,password:password};
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
-	
-	let url = urlBase + '/Login.' + extension;
 
-	let xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				let jsonObject = JSON.parse( xhr.responseText );
-				console.log(jsonObject);
-				// userId = jsonObject.id;
-		
-				// if( userId < 1 )
-				// {		
-                //     console.log("INVALID LOGIN");
-				// 	return;
-				// }
-		
-				// firstName = jsonObject.username;
-				// lastName = jsonObject.lastName;
-
-				// // saveCookie();
+	console.log(jsonPayload);
 	
-				window.location.href = "SignUPPage.html";
-			}
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		console.log("INVALID LOGIN.")
-	}
+	// let url = urlBase + '/Login.' + extension;
+
+	// let xhr = new XMLHttpRequest();
+	// xhr.open("POST", url, true);
+	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	// try
+	// {
+	// 	xhr.onreadystatechange = function() 
+	// 	{
+	// 		if (this.readyState == 4 && this.status == 200) 
+	// 		{
+	// 			let jsonObject = JSON.parse( xhr.responseText );
+	// 			console.log(jsonObject);
+	// 			// userId = jsonObject.id;
+		
+	// 			// if( userId < 1 )
+	// 			// {		
+    //             //     console.log("INVALID LOGIN");
+	// 			// 	return;
+	// 			// }
+		
+	// 			// firstName = jsonObject.username;
+	// 			// lastName = jsonObject.lastName;
+
+	// 			// // saveCookie();
+	
+	// 			window.location.href = "SignUPPage.html";
+	// 		}
+	// 	};
+	// 	xhr.send(jsonPayload);
+	// }
+	// catch(err)
+	// {
+	// 	console.log("INVALID LOGIN.")
+	// }
 
 }
 
