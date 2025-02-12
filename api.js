@@ -11,13 +11,13 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	let login = document.getElementById("loginName").value;
-	let password = document.getElementById("loginPassword").value;
+	let username = document.getElementById("username").value;
+	let password = document.getElementById("password").value;
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	let tmp = {login:login,password:password};
+	let tmp = {username:username,password:password};
 //	var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
@@ -33,27 +33,28 @@ function doLogin()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
+				console.log(jsonObject);
+				// userId = jsonObject.id;
 		
-				if( userId < 1 )
-				{		
-                    console.log("Invalid LOGIN");
-					return;
-				}
+				// if( userId < 1 )
+				// {		
+                //     console.log("INVALID LOGIN");
+				// 	return;
+				// }
 		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
+				// firstName = jsonObject.username;
+				// lastName = jsonObject.lastName;
 
-				saveCookie();
+				// // saveCookie();
 	
-				window.location.href = "SignUPPage.html";
+				// window.location.href = "SignUPPage.html";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		console.log("INVALID LOGIN.")
 	}
 
 }
