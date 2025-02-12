@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script type="text/javascript" src="js/code.js"></script>
         <meta charset="UTF - 8">
         <meta name = "viewport" content="width=device-width,initial-scale = 1.0">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -15,14 +16,14 @@
             <form action = "">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type ="text" placeholder="Username" required>
+                    <input type ="text" placeholder="Username" id="loginName" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type ="password" placeholder="Password" required>
+                    <input type ="password" placeholder="Password" id="loginPassword" required>
                     <i class='bx bxs-key' ></i>
                 </div>
-                <button type = "submit" class="btn">Login</button>
+                <button type = "submit" class="btn" onclick="doLogin()">Login</button>
                 <!-- <div class="signuplink">
                     <p><a href="SignUPPage.html">Sign up</a></p>
                 </div> -->
