@@ -1,11 +1,6 @@
 <?php
-    $inData = getRequestInfo();
-
-    $username = $inData["username"];
-	$password = $inData["password"];
-
     header('Content-type: application/json');
-    echo $username;
+    sendResultInfoAsJson($_GET);
 
     function getRequestInfo()
 	{
