@@ -1,0 +1,114 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Faculty Glyphic", serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('unnamed.jpg') no-repeat;
+    background-size: cover;
+}
+
+.wrapper{
+    width: 600px;
+    height: 350px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    border-radius: 30px;
+    padding: 30px 40px;
+}
+
+.wrapper h1{
+    font-size: 40px;
+    text-align: center;
+}
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border:none;
+    outline: none;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 40px;
+    font-size: 18px;
+    color: white;
+    padding-left: 20px;
+
+}
+
+.input-box input::placeholder{
+    color:white;
+}
+
+.input-box i{
+    position: absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+    
+}
+
+.wrapper .signupbutton{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+
+.wrapper .signuplink{
+    text-align: center;
+    margin-top: 8px;
+    
+    
+}
+
+.signuplink p a{
+    text-decoration: none;
+    color: white;
+   
+}
+.signuplink p a:hover{
+    text-decoration: underline;
+}
