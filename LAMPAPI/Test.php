@@ -4,8 +4,8 @@
     $username = $inData["username"];
 	$password = $inData["password"];
 
-    $result = '{"username":"' . $username . '", password:"' . $password . '"}'
-    sendResultInfoAsJson($result)
+    $result = '{"username":"' . $username . '", password:"' . $password . '"}';
+    sendResultInfoAsJson($result);
 
     function getRequestInfo()
 	{
