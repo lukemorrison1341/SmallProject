@@ -4,8 +4,8 @@
     $username = $inData["username"];
 	$password = $inData["password"];
 
-    $result = '{"username":"' . $username . '"}';
-    sendResultInfoAsJson($result);
+    header('Content-type: application/json');
+    echo $username;
 
     function getRequestInfo()
 	{
