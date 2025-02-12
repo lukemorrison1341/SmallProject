@@ -1,6 +1,6 @@
 <?php
     header('Content-type: application/json');
-    sendResultInfoAsJson($_GET);
+    sendResultInfoAsJson($_GET["username"]);
 
     function getRequestInfo()
 	{
