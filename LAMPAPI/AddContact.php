@@ -4,8 +4,11 @@
 	$userId = $inData["userId"];
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
-	$phone - $inData["phone"];
+	$phone = $inData["phone"];
 	$email = $inData["email"];
+
+	// Concatenate first and last name
+	$name = $firstName . ' ' . $lastName;
 
 	$conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
 	
