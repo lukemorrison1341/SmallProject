@@ -1,7 +1,7 @@
 <?php
     $inData = getRequestInfo();
 
-    sendResultInfoAsJson($inData)
+    sendResultInfoAsJson($inData);
 
     function getRequestInfo()
 	{
