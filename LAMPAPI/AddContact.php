@@ -1,11 +1,11 @@
 <?php
 	$inData = getRequestInfo();
-		
+	
+	$userId = $inData["userId"];
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
 	$phone = $inData["phone"];
 	$email = $inData["email"];
-	$userId = $inData["userId"];
 
 	// Concatenate first and last name
 	$name = $firstName . ' ' . $lastName;
@@ -19,7 +19,7 @@
 	else
 	{
 		$stmt = $conn->prepare("INSERT into Contacts  (Name, Phone, Email, UserID) VALUES(?,?,?,?)");
-		$stmt->bind_param("sssi", $name, $phone, $email, $userID);
+		$stmt->bind_param("sssi", $name, $phone, $email, $userId);
 
 		if($stmt->execute()){
 
@@ -33,7 +33,7 @@
 
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
+
 	}
 
 	function getRequestInfo()
@@ -47,10 +47,10 @@
 		echo $obj;
 	}
 	
-	function returnWithError( $err )
+	function returnWithError($err)
 	{
 		$retValue = '{"error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
+		sendResultInfoAsJson($retValue);
 	}
 	
 	function returnWithInfo($info)
