@@ -1,11 +1,11 @@
 <?php
 	$inData = getRequestInfo();
-	
-	$userId = $inData["userId"];
+		
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
 	$phone = $inData["phone"];
 	$email = $inData["email"];
+	$userId = $inData["userId"];
 
 	// Concatenate first and last name
 	$name = $firstName . ' ' . $lastName;
