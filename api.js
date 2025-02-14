@@ -162,3 +162,38 @@ function searchContact()
 	}
 	
 }
+
+function searchAllContact()
+{
+
+	let tmp = {
+		userId: userId
+	};
+
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/SearchAllContacts.' + extension;
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				for(let i = 0; i < jsonObject.results.length; i++) {
+					console.log(jsonObject.results[i].Name, jsonObject.results[i].Email, jsonObject.results[i].Phone);
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("colorSearchResult").innerHTML = err.message;
+	}
+	
+}
