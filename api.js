@@ -184,8 +184,8 @@ function searchAllContacts()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				for(let i = 0; i < jsonObject.results.length; i++) {
-					console.log(jsonObject.results[i].Name, jsonObject.results[i].Email, jsonObject.results[i].Phone);
+				for(let i = 0; i < jsonObject.contacts.length; i++) {
+					console.log(jsonObject.contacts[i].Name, jsonObject.contacts[i].Email, jsonObject.contacts[i].Phone);
 				}
 			}
 		};
