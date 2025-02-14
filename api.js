@@ -106,7 +106,7 @@ function doRegister() {
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				let jsonObject = JSON.parse( xhr.responseText );	
+				console.log("YEP!");	
 				window.location.href = "index.html";
 			}
 		};
