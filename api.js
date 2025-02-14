@@ -149,7 +149,9 @@ function searchContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				console.log(jsonObject.results);
+				for(let i = 0; i < jsonObject.results.length; i++) {
+					console.log(jsonObject.results[i]);
+				}
 			}
 		};
 		xhr.send(jsonPayload);
