@@ -186,6 +186,14 @@ function searchAllContacts()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
+				
+				if (jsonObject.contacts.length === 0) {
+					tmp.document.createElement('p')
+					tmp.innerHTML = "No Contacts Added."
+					results_area.appendChild(tmp);
+					return;
+				}
+
 				for(let i = 0; i < jsonObject.contacts.length; i++) {
 					tmp = document.createElement('p');
 					tmp.innerHTML = `${jsonObject.contacts[i].Name} ${jsonObject.contacts[i].Email} ${jsonObject.contacts[i].Phone}`;
