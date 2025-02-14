@@ -84,6 +84,40 @@ function readCookie()
 	}
 }
 
+function doRegister() {
+
+	let username = document.getElementById("username").value;
+	let password = document.getElementById("password").value;
+
+	let tmp = {
+		username: username,
+		password: password
+	};
+
+	let jsonPayload = JSON.stringify(tmp);
+	let url = urlBase + "/Register." + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );	
+				window.location.href = "index.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		return;
+	}
+}
+
 function doLogout()
 {
 	userId = 0;
