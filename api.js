@@ -188,7 +188,7 @@ function searchAllContacts()
 				let jsonObject = JSON.parse( xhr.responseText );
 
 				if (jsonObject.error) {
-					tmp.document.createElement('p');
+					tmp = document.createElement('p');
 					tmp.innerHTML = jsonObject.error;
 					results_area.appendChild(tmp);
 					return;
