@@ -45,21 +45,24 @@ function getRequestInfo()
     return json_decode(file_get_contents('php://input'), true);
 }
 
-function sendResultInfoAsJson($obj)
-{
+function sendResultInfoAsJson($obj) {
+
     header('Content-type: application/json');
-    echo $obj;
+    echo json_encode($obj);
+
 }
 
-function returnWithError($err)
-{
-    $retValue = '{"error":"' . $err . '"}';
+function returnWithError($err) {
+
+    $retValue = ["error" => $err];
     sendResultInfoAsJson($retValue);
+
 }
 
-function returnWithInfo($info)
-{
-    $retValue = '{"message":"' . $info . '"}';
+function returnWithInfo($info) {
+
+    $retValue = ["contacts" => $info];
     sendResultInfoAsJson($retValue);
+
 }
 ?>
