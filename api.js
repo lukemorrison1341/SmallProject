@@ -150,7 +150,7 @@ function searchContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					console.log(jsonObject.results.Name, jsonObject.results.Email, jsonObject.results.Phone);
+					console.log(jsonObject.results[i].Name, jsonObject.results[i].Email, jsonObject.results[i].Phone);
 				}
 			}
 		};
