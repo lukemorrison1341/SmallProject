@@ -163,7 +163,7 @@ function searchContact()
 	
 }
 
-function searchAllContact()
+function searchAllContacts()
 {
 
 	let tmp = {
