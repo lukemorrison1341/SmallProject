@@ -150,8 +150,9 @@ function searchContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					console.log(jsonObject.results[i]);
+					colorList += jsonObject.results[i];
 				}
+				console.log(colorList);
 			}
 		};
 		xhr.send(jsonPayload);
