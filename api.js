@@ -186,10 +186,10 @@ function searchAllContacts()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				
-				if (jsonObject.contacts.length === 0) {
-					tmp.document.createElement('p')
-					tmp.innerHTML = "No Contacts Added."
+
+				if (jsonObject.error) {
+					tmp.document.createElement('p');
+					tmp.innerHTML = jsonObject.error;
 					results_area.appendChild(tmp);
 					return;
 				}
