@@ -173,6 +173,8 @@ function searchAllContacts()
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchAllContacts.' + extension;
+
+	const results_area = document.getElementById("results-box");
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -185,7 +187,9 @@ function searchAllContacts()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				for(let i = 0; i < jsonObject.contacts.length; i++) {
-					console.log(jsonObject.contacts[i].Name, jsonObject.contacts[i].Email, jsonObject.contacts[i].Phone);
+					tmp = document.createElement('p');
+					tmp.innerHTML = `${jsonObject.contacts[i].Name} ${jsonObject.contacts[i].Email} ${jsonObject.contacts[i].Phone}`;
+					results_area.appendChild(tmp);
 				}
 			}
 		};
