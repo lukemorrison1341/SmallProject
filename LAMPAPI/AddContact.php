@@ -4,8 +4,11 @@
 	$userId = $inData["userId"];
 	$firstName = $inData["firstName"];
 	$lastName = $inData["lastName"];
-	$phone - $inData["phone"];
+	$phone = $inData["phone"];
 	$email = $inData["email"];
+
+	// Concatenate first and last name
+	$name = $firstName . ' ' . $lastName;
 
 	$conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
 	
@@ -16,7 +19,7 @@
 	else
 	{
 		$stmt = $conn->prepare("INSERT into Contacts  (Name, Phone, Email, UserID) VALUES(?,?,?,?)");
-		$stmt->bind_param("sssi", $name, $phone, $email, $userID);
+		$stmt->bind_param("sssi", $name, $phone, $email, $userId);
 
 		if($stmt->execute()){
 
@@ -30,7 +33,7 @@
 
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
+
 	}
 
 	function getRequestInfo()
@@ -44,10 +47,10 @@
 		echo $obj;
 	}
 	
-	function returnWithError( $err )
+	function returnWithError($err)
 	{
 		$retValue = '{"error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
+		sendResultInfoAsJson($retValue);
 	}
 	
 	function returnWithInfo($info)
