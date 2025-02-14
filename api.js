@@ -154,7 +154,7 @@ function searchContact()
 						colorList += "<br />\r\n";
 					}
 				}
-				
+				console.log(colorList);
 				document.getElementsByTagName("p")[0].innerHTML = colorList;
 			}
 		};
