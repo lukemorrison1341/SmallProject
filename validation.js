@@ -47,7 +47,7 @@ function handleLoginError(errorMessage) {
         document.getElementById('errorMessage').textContent = 'No such user.';
     } else if (errorMessage === "Incorrect password.") {
         
-        document.getElementById('password').style.borderColor = 'red';
+        document.getElementById('password').style.color = 'red';
         document.getElementById('errorMessage').textContent = 'Incorrect password.';
     }
 }
