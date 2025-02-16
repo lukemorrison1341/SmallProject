@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    // Prepare the data to be sent in the POST request
+    
     var requestData = {
         username: username,
         password: password
@@ -22,11 +22,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then(response => response.json())
     .then(data => {
         if (data.error === "") {
-            // Login successful, handle the success (e.g., redirect to another page)
+            
             console.log("Login successful! User ID: " + data.id);
-            document.getElementById('errorMessage').textContent = ''; // Clear error message
+            document.getElementById('errorMessage').textContent = ''; 
         } else {
-            // Login failed, handle the error
+            
             handleLoginError(data.error);
         }
     })
