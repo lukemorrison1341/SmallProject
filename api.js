@@ -8,8 +8,6 @@ let lastName = "";
 function doLogin()
 {
 	userId = 0;
-	firstName = "";
-	lastName = "";
 	
 	let username = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
@@ -33,8 +31,9 @@ function doLogin()
 				userId = jsonObject.id;
 		
 				if( userId < 1 )
-				{		
-					document.getElementById("system-message").innerHTML = "Error!"
+				{	
+					console.log("Something's wrong...");
+					document.getElementById("system-message").innerHTML = "Error!";
 					return;
 				}
 
