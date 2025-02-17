@@ -43,7 +43,8 @@ function handleLoginError(errorMessage) {
 
     if (errorMessage === "No such user.") {
         // User not found, highlight the username field in red
-        document.getElementById('input-box').style.borderColor = 'red';
+        //document.getElementById('input-box').style.borderColor = 'red';
+        document.getElementById("username").textContent = "invalid username";
         document.getElementById('errorMessage').textContent = 'No such user.';
     } else if (errorMessage === "Incorrect password.") {
         
