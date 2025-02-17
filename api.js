@@ -34,6 +34,7 @@ function doLogin()
 		
 				if( userId < 1 )
 				{		
+					document.getElementById("system-message").innerHTML = "Error!"
 					return;
 				}
 
@@ -46,6 +47,7 @@ function doLogin()
 	}
 	catch(err)
 	{
+		document.getElementById("system-message").innerHTML = err;
 		return;
 	}
 
