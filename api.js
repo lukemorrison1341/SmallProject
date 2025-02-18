@@ -11,7 +11,7 @@ function doLogin()
 	
 	let username = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
-	
+
 	if(username.trim() === "" || password.trim() === ""){
 		if (username.trim() === "") {
 			document.getElementById("username").style.borderColor = "red";
@@ -102,6 +102,16 @@ function doRegister() {
 
 	let username = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
+
+	if(username.trim() === "" || password.trim() === ""){
+		if (username.trim() === "") {
+			document.getElementById("username").style.borderColor = "red";
+		}
+		if (password.trim() === "") {
+			document.getElementById("password").style.borderColor = "red";
+		}
+		return;
+	}
 
 	let tmp = {
 		username: username,
