@@ -32,7 +32,7 @@ function doLogin()
 		
 				if( userId < 1 )
 				{	
-					document.getElementById("username").style.borderColor = red;
+					document.getElementById("input-box").style.borderColor = red;
 				
 
 					return;
