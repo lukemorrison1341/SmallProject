@@ -32,7 +32,7 @@ function doLogin()
 		
 				if( userId < 1 )
 				{	
-					document.getElementById("test").style.color = blue;
+					document.getElementById("test").style.color = "red";
 				
 
 					return;
