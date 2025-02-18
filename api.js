@@ -32,8 +32,9 @@ function doLogin()
 		
 				if( userId < 1 )
 				{	
-					document.getElementById("username").style.background = red;
-					
+					document.getElementById("username").style.color = red;
+				
+
 					return;
 				}
 
