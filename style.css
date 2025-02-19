@@ -139,5 +139,6 @@ td {
 }
 
 #add-icon {
+    background: transparent;
     border: 1px solid #75FB4C;
 }
