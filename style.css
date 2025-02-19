@@ -143,3 +143,8 @@ td {
     width: auto;
     border: 1px solid #75FB4C;
 }
+
+svg {
+    height: 2rem;
+    width: 2rem;
+}
