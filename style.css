@@ -141,7 +141,7 @@ td {
 #add-icon {
     background: transparent;
     width: auto;
-    border: 2px solid rgba(117, 251, 76, 1);
+    border: 2px solid rgba(117, 251, 76, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
