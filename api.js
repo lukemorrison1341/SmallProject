@@ -45,7 +45,7 @@ function doLogin()
 				{	
 					document.getElementById("username").style.borderColor = "red";
 					document.getElementById("password").style.borderColor = "red";
-					alert("Username not found or incorrect password");
+					
 				
 
 					return;
