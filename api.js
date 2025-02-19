@@ -276,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let toggleIcon = document.getElementById('show-password-toggle');
     if (toggleIcon) {
         toggleIcon.addEventListener('click', function() {
+			console.log("Print");
             var passwordField = document.getElementById('password');
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
