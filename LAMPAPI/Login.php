@@ -29,12 +29,12 @@
 			} 
 			else 
 			{
-				returnWithError("Incorrect password.");
+				returnWithError("Try Again.");
 			}
 		} 
 		else 
 		{
-			returnWithError("No such user.");
+			returnWithError("Try Again.");
 		}
 
 		$stmt->close();
