@@ -122,7 +122,10 @@ body{
 
 #search-area div {
     margin: auto;
-    margin-top: 0;
     height: 100%;
+}
+
+#search-area div .btn {
+    margin-top: 0px;
 }
 
