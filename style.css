@@ -134,3 +134,7 @@ body{
     margin-top: 10px;  
 }
 
+td {
+    border: solid white 1px;
+}
+
