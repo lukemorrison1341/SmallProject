@@ -47,6 +47,8 @@ function doLogin()
 				{	
 					document.getElementById("username").style.borderColor = "red";
 					document.getElementById("password").style.borderColor = "red";
+					var errorMessage = document.getElementById('error-message');
+					errorMessage.style.display = 'block';
 					
 				
 
