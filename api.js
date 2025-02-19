@@ -5,6 +5,8 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+
+
 function doLogin()
 {
 	userId = 0;
@@ -268,3 +270,20 @@ function searchAllContacts()
 	}
 	
 }
+
+// Show password toggle
+document.addEventListener('DOMContentLoaded', function() {
+    let toggleIcon = document.getElementById('show-password-toggle');
+    if (toggleIcon) {
+        toggleIcon.addEventListener('click', function() {
+            var passwordField = document.getElementById('password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        });
+    }
+});
+
+

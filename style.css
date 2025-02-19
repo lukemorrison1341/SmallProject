@@ -14,7 +14,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('images.jpg') no-repeat;
+    background: url('unnamed.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -71,6 +71,11 @@ body{
     font-size: 20px;
 }
 
+#show-password-toggle {
+    right: 45px; 
+    cursor: pointer;
+}
+
 .wrapper .btn{
     width: 100%;
     height: 30px;
@@ -114,3 +119,4 @@ body{
     display: flex;
     flex-direction: column;
 }
+
