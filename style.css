@@ -115,7 +115,7 @@ body{
    
 }
 
-.search-area {
+#search-area {
     display: flex;
     flex-direction: column;
 }
