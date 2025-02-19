@@ -258,9 +258,18 @@ function searchAllContacts()
 				}
 
 				for(let i = 0; i < jsonObject.contacts.length; i++) {
-					tmp = document.createElement('p');
-					tmp.innerHTML = `${jsonObject.contacts[i].Name} ${jsonObject.contacts[i].Email} ${jsonObject.contacts[i].Phone}`;
-					results_area.appendChild(tmp);
+					table_row = document.createElement('tr');
+					tmp = document.createElement('td');
+					tmp.innerHTML = jsonObject.contacts[i].Name;
+					table_row.appendChild(tmp);
+					tmp = document.createElement('td');
+					tmp.innerHTML = jsonObject.contacts[i].Email;
+					table_row.appendChild(tmp);
+					tmp = document.createElement('td');
+					tmp.innerHTML = jsonObject.contacts[i].Phone;
+					table_row.appendChild(tmp);
+					// tmp.innerHTML = `${jsonObject.contacts[i].Name} ${jsonObject.contacts[i].Email} ${jsonObject.contacts[i].Phone}`;
+					results_area.appendChild(table_row);
 				}
 			}
 		};
