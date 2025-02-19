@@ -275,7 +275,7 @@ function searchAllContacts()
 document.addEventListener('DOMContentLoaded', function() {
     let toggleIcon = document.getElementById('show-password-toggle');
     if (toggleIcon) {
-        toggleIcon.addEventListener('onclick', function() {
+        toggleIcon.addEventListener('click', function() {
             var passwordField = document.getElementById('password');
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
