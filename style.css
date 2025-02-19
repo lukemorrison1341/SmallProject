@@ -142,6 +142,9 @@ td {
     background: transparent;
     width: auto;
     border: 1px solid #75FB4C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 svg {
