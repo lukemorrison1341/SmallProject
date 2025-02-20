@@ -72,6 +72,7 @@ body{
 }
 
 #show-password-toggle {
+    display: block;
     right: 45px; 
     cursor: pointer;
     text-align: center;
