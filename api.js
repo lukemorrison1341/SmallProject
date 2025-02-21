@@ -215,7 +215,6 @@ function searchContact()
 			{
 
 				let jsonObject = JSON.parse( xhr.responseText );
-				console.log(jsonObject);
 				for(let i = 0; i < jsonObject.results.length; i++) {
 					table_row = document.createElement('tr');
 					tmp = document.createElement('td');
