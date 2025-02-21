@@ -149,6 +149,7 @@ body{
 
 td {
     border: solid white 1px;
+    margin: auto;
 }
 
 #add-icon {
