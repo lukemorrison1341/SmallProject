@@ -150,6 +150,7 @@ body{
 td {
     border: solid white 1px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
