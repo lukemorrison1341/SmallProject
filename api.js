@@ -201,7 +201,9 @@ function searchContact()
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchContact.' + extension;
-	
+
+	const results_area = document.getElementById("results-box");
+	results_area.innerHTML = '';
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -211,9 +213,22 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
+
 				let jsonObject = JSON.parse( xhr.responseText );
+				console.log(jsonObject);
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					console.log(jsonObject.results[i].Name, jsonObject.results[i].Email, jsonObject.results[i].Phone);
+					table_row = document.createElement('tr');
+					tmp = document.createElement('td');
+					tmp.innerHTML = jsonObject.results[i].Name;
+					table_row.appendChild(tmp);
+					tmp = document.createElement('td');
+					tmp.innerHTML = jsonObject.results[i].Email;
+					table_row.appendChild(tmp);
+					tmp = document.createElement('td');
+					tmp.innerHTML = jsonObject.results[i].Phone;
+					table_row.appendChild(tmp);
+					// tmp.innerHTML = `${jsonObject.contacts[i].Name} ${jsonObject.contacts[i].Email} ${jsonObject.contacts[i].Phone}`;
+					results_area.appendChild(table_row);
 				}
 			}
 		};
