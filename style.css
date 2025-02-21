@@ -156,6 +156,10 @@ td {
     align-items: center;
 }
 
+#add-icon:hover {
+    background: rgba(117, 251, 76, 0.3);
+}
+
 svg {
     height: 2rem;
     width: 2rem;
