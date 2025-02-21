@@ -131,6 +131,7 @@ body{
 
 #search-area div .btn {
     margin-top: 0px;
+    padding: 1rem;
 }
 #error-message {
     color: red;
