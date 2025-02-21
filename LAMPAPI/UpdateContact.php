@@ -1,48 +1,77 @@
 <?php
-    $inData = getRequestInfo();
 
-    $id = $inData["id"];
-    $userId = $inData["userId"];
-    $name = $inData["Name"];
-    $phone = $inData["Phone"];
-    $email = $inData["Email"];
+$inData = getRequestInfo();
 
-    $conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
+$id = $inData["id"];
+$userId = $inData["userId"];
+$name = isset($inData["Name"]) ? $inData["Name"] : null;
+$phone = isset($inData["Phone"]) ? $inData["Phone"] : null;
+$email = isset($inData["Email"]) ? $inData["Email"] : null;
 
-    if ($conn->connect_error) {
-        returnWithError($conn->connect_error);
+$conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
+
+if ($conn->connect_error) {
+    returnWithError($conn->connect_error);
+} else {
+    
+    $sql = "UPDATE Contacts SET ";
+    $params = [];
+    $types = "";
+
+    if ($name !== null) {
+        $sql .= "Name = ?, ";
+        $params[] = $name;
+        $types .= "s";
+    }
+    if ($phone !== null) {
+        $sql .= "Phone = ?, ";
+        $params[] = $phone;
+        $types .= "s";
+    }
+    if ($email !== null) {
+        $sql .= "Email = ?, ";
+        $params[] = $email;
+        $types .= "s";
+    }
+
+    
+    $sql = rtrim($sql, ", ");
+    $sql .= " WHERE id = ? AND UserID = ?";
+    $params[] = $id;
+    $params[] = $userId;
+    $types .= "ii";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param($types, ...$params);
+    $stmt->execute();
+
+    if ($stmt->affected_rows > 0) {
+        returnWithInfo("Contact updated successfully.");
     } else {
-        
-        $stmt = $conn->prepare("UPDATE Contacts SET Name = ?, Phone = ?, Email = ? WHERE id = ? AND UserID = ?");
-        $stmt->bind_param("sssis", $name, $phone, $email, $id, $userId);
-        $stmt->execute();
-
-        if ($stmt->affected_rows > 0) {
-            returnWithInfo("Contact updated successfully.");
-        } else {
-            returnWithError("No contact updated. Please check if the contact exists and belongs to the user.");
-        }
-
-        $stmt->close();
-        $conn->close();
+        returnWithError("No contact updated. Please check if the contact exists and belongs to the user.");
     }
 
-    function getRequestInfo() {
-        return json_decode(file_get_contents('php://input'), true);
-    }
+    $stmt->close();
+    $conn->close();
+}
 
-    function sendResultInfoAsJson($obj) {
-        header('Content-type: application/json');
-        echo $obj;
-    }
+function getRequestInfo() {
+    return json_decode(file_get_contents('php://input'), true);
+}
 
-    function returnWithError($err) {
-        $retValue = '{"error":"' . $err . '"}';
-        sendResultInfoAsJson($retValue);
-    }
+function sendResultInfoAsJson($obj) {
+    header('Content-type: application/json');
+    echo $obj;
+}
 
-    function returnWithInfo($info) {
-        $retValue = '{"message":"' . $info . '", "error":""}';
-        sendResultInfoAsJson($retValue);
-    }
+function returnWithError($err) {
+    $retValue = '{"error":"' . $err . '"}';
+    sendResultInfoAsJson($retValue);
+}
+
+function returnWithInfo($info) {
+    $retValue = '{"message":"' . $info . '", "error":""}';
+    sendResultInfoAsJson($retValue);
+}
+
 ?>
