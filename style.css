@@ -169,6 +169,6 @@ svg {
     width: 2rem;
 }
 
-svg .btn {
+.wrapper svg .btn {
     background: transparent;
 }
