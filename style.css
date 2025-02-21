@@ -169,6 +169,6 @@ svg {
     width: 2rem;
 }
 
-.wrapper svg .btn {
-    background: transparent;
+#delete {
+    color: red;
 }
