@@ -29,6 +29,8 @@ body{
     color: #fff;
     border-radius: 30px;
     padding: 30px 40px;
+
+    animation: expandBlur 1s ease-out forwards;  /*Test*/
 }
 
 .wrapper h1{
@@ -188,3 +190,18 @@ svg {
 #edit:hover {
     fill: white;
 }
+
+
+/* Test */
+@keyframes expandBlur {
+    0% {
+        backdrop-filter: blur(10px);  
+        transform: scale(0.95); 
+    }
+    100% {
+        backdrop-filter: blur(20px);  
+        transform: scale(1);  
+    }
+}
+
+
