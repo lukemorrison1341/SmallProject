@@ -12,9 +12,9 @@
 	} 
 	else 
 	{
-		$stmt = $conn->prepare("SELECT Name, Phone, Email FROM Contacts WHERE (Name LIKE ? OR Email LIKE ?) AND UserID=?");
+		$stmt = $conn->prepare("SELECT Name, Phone, Email FROM Contacts WHERE (Name LIKE ? OR Email LIKE ? OR Phone LIKE ?) AND UserID=?");
 		$searchParam = "%" . $search . "%";
-		$stmt->bind_param("ssi", $searchParam, $searchParam, $userId);
+		$stmt->bind_param("sssi", $searchParam, $searchParam, $searchParam, $userId);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
