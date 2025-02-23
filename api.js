@@ -106,15 +106,27 @@ function doRegister() {
 
 	let username = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
+	let confirmpassword = document.getElementById("confirmpassword").value;
 
-	if(username.trim() === "" || password.trim() === ""){
+	if(username.trim() === "" || password.trim() === "" || confirmpassword.trim() === ""){
 		if (username.trim() === "") {
 			document.getElementById("username").style.borderColor = "red";
 		}
 		if (password.trim() === "") {
 			document.getElementById("password").style.borderColor = "red";
 		}
+		if (confirmpassword.trim() === "") {
+			document.getElementById("confirmpassword").style.borderColor = "red";
+		}
+		
 		return;
+	}
+	if(password != confirmpassword){
+		document.getElementById("password").style.borderColor = "red";
+		document.getElementById("confirmpassword").style.borderColor = "red";
+		var errorMessage = document.getElementById('password-error');
+		errorMessage.style.display = 'block';
+
 	}
 
 	let tmp = {
@@ -307,10 +319,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (toggleIcon) {
         toggleIcon.addEventListener('click', function() {
             var passwordField = document.getElementById('password');
+			var confirmpasswordField = document.getElementById('confirmpassword');
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
+				confirmpasswordField.type = 'text';
             } else {
                 passwordField.type = 'password';
+				confirmpasswordField.type = 'password';
             }
         });
     }
