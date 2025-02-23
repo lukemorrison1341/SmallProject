@@ -127,6 +127,8 @@ function doRegister() {
 		var errorMessage = document.getElementById('password-error');
 		errorMessage.style.display = 'block';
 
+		return;
+
 	}
 
 	let tmp = {
