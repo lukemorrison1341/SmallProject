@@ -200,7 +200,7 @@ svg {
     }
     100% {
         backdrop-filter: blur(20px);  
-        transform: scale(3);  
+        transform: scale(2);  
     }
 }
 
