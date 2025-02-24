@@ -152,6 +152,9 @@ function doRegister() {
 				console.log("YEP!");	
 				window.location.href = "index.html";
 			}
+			else{
+				console.log(this.errorMessage);
+			}
 		};
 		xhr.send(jsonPayload);
 	}
