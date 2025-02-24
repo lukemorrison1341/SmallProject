@@ -150,13 +150,14 @@ function doRegister() {
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				console.log("YEP!");	
-				window.location.href = "index.html";
+				
 				let response = JSON.parse(this.responseText);
                 if (response.error) {
                     var usernameerrorMessage = document.getElementById('username-error');
                     usernameerrorMessage.style.display = 'block';
 					return;
                 }
+				window.location.href = "index.html";
 			}
 			
 		};
