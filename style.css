@@ -150,6 +150,9 @@ body{
     flex-wrap: wrap;  
 }
 
+tr {
+    border: solid white 1px;
+}
 
 #add-icon {
     background: transparent;
