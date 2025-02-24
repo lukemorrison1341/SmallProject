@@ -185,6 +185,5 @@ svg {
 }
 
 tr {
-    height: 10px;
-    width: 10px;
+    border: solid white 10px;
 }
