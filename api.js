@@ -153,7 +153,8 @@ function doRegister() {
 				window.location.href = "index.html";
 				let response = JSON.parse(this.responseText);
                 if (response.error) {
-                    console.log(response.error);
+                    var usernameerrorMessage = document.getElementById('username-error');
+					usernameerrorMessage.style.display = 'block';
                 }
 			}
 			
