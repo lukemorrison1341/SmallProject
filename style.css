@@ -150,13 +150,6 @@ body{
     flex-wrap: wrap;  
 }
 
-table {
-    background-color: black !important;
-}
-
-td {
-    border: solid white 1px;
-}
 
 #add-icon {
     background: transparent;
