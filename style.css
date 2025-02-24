@@ -186,6 +186,7 @@ svg {
 
 #results-box {
     overflow: scroll;
+    overflow-y: hidden;
 }
 
 .contact-row {
