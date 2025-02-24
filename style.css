@@ -151,7 +151,7 @@ body{
 }
 
 tr {
-    background-color: black;
+    background-color: black !important;
 }
 
 td {
