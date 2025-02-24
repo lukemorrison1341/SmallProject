@@ -184,6 +184,10 @@ svg {
     fill: white;
 }
 
+#results-box {
+    overflow: scroll;
+}
+
 .contact-row {
     display: flex;
     flex-direction: row;
