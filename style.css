@@ -183,3 +183,8 @@ svg {
 #edit:hover {
     fill: white;
 }
+
+.contact-row {
+    display: flex;
+    flex-direction: column;
+}
