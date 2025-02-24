@@ -153,7 +153,7 @@ function doRegister() {
 				
 				let response = JSON.parse(this.responseText);
                 if (response.error =="Username already exists." ) {
-					console.log("In the if block...");
+					// console.log("In the if block...");
                     var usernameerrorMessage = document.getElementById('username-error');
                     usernameerrorMessage.style.display = 'block';
 					return;
