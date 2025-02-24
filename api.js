@@ -154,7 +154,7 @@ function doRegister() {
 				let response = JSON.parse(this.responseText);
                 if (response.error) {
                     var usernameerrorMessage = document.getElementById('username-error');
-					usernameerrorMessage.style.display = 'block';
+                    usernameerrorMessage.style.display = 'block';
                 }
 			}
 			
