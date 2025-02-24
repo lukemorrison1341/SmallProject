@@ -150,7 +150,7 @@ body{
     flex-wrap: wrap;  
 }
 
-tr {
+table {
     background-color: black !important;
 }
 
