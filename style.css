@@ -151,8 +151,7 @@ body{
 }
 
 tr {
-    display: flex;
-    flex-direction: column;
+    background-color: black;
 }
 
 td {
