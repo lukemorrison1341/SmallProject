@@ -151,10 +151,6 @@ body{
 
 td {
     border: solid white 1px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 #add-icon {
