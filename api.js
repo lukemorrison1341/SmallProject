@@ -301,6 +301,7 @@ function searchAllContacts()
 
 				for(let i = 0; i < jsonObject.contacts.length; i++) {
 					table_row = document.createElement('div');
+					table_row.classList.add("contact-row");
 					tmp = document.createElement('p');
 					tmp.innerHTML = jsonObject.contacts[i].Name;
 					table_row.appendChild(tmp);
