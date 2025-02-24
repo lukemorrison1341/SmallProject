@@ -149,6 +149,11 @@ body{
     flex-wrap: wrap;  
 }
 
+tr {
+    display: flex;
+    flex-direction: row;
+}
+
 td {
     border: solid white 1px;
 }
