@@ -155,6 +155,7 @@ function doRegister() {
                 if (response.error) {
                     var usernameerrorMessage = document.getElementById('username-error');
                     usernameerrorMessage.style.display = 'block';
+					return;
                 }
 			}
 			
