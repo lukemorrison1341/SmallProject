@@ -151,10 +151,12 @@ function doRegister() {
 			{
 				console.log("YEP!");	
 				window.location.href = "index.html";
+				let response = JSON.parse(this.responseText);
+                if (response.error) {
+                    console.log(response.error);
+                }
 			}
-			else{
-				console.log(this.errorMessage);
-			}
+			
 		};
 		xhr.send(jsonPayload);
 	}
