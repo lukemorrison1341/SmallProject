@@ -199,7 +199,6 @@ svg {
 
 .contact-row div {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
