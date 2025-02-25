@@ -239,7 +239,7 @@ function searchContact()
 
 				let jsonObject = JSON.parse( xhr.responseText );
 				for(let i = 0; i < jsonObject.results.length; i++) {
-					table_row = createContactElement(jsonObject.results)
+					table_row = createContactElement(jsonObject.results[i])
 					results_area.appendChild(table_row);
 				}
 			}
