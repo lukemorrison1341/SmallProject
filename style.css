@@ -167,19 +167,19 @@ svg {
     width: 2rem;
 }
 
-#delete {
+.delete {
     fill: rgba(255, 255, 255, .7);
 }
 
-#delete:hover {
+.delete:hover {
     fill: #ff3737;
 }
 
-#edit {
+.edit {
     fill: rgba(255,255,255,.7);
 }
 
-#edit:hover {
+.edit:hover {
     fill: white;
 }
 
