@@ -183,6 +183,16 @@ svg {
     fill: white;
 }
 
+#cancel {
+    fill: rgba(255, 255, 255, .7);
+}
+
+#cancel:hover {
+    fill: #ff3737;
+}
+
+
+
 #results-box {
     margin-top: 1rem;
     max-height: 15rem;
