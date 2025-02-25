@@ -192,19 +192,19 @@ function addContact()
 	let tmp = document.createElement('input');
 	tmp.type = "text";
 	tmp.name = "name";
-	tmp.id.add("name")
+	tmp.id = "name";
 	contact_div.appendChild(tmp);
 
 	tmp = document.createElement('input');
 	tmp.type = "email";
 	tmp.name = "email";
-	tmp.id.add("email");
+	tmp.id = "email";
 	contact_div.appendChild(tmp);
 
 	tmp = document.createElement('input');
 	tmp.type = "tel";
 	tmp.name = "phone";
-	tmp.id.add("phone");
+	tmp.id = "phone";
 	contact_div.appendChild(tmp);
 
 	tmp = document.createElement('div');
