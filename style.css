@@ -19,7 +19,8 @@ body{
 }
 
 .wrapper{
-    
+    min-width: 600px;
+    min-height: 350px;
     background: transparent;
     border: 2px solid rgba(255,255,255,.5);
     border-radius: 20px;
