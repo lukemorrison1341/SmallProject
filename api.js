@@ -230,8 +230,8 @@ function addContact()
 	const confirm_btn = document.getElementsByClassName("confirm");
 	const cancel_btn = document.getElementsByClassName("cancel");
 	cancel_btn.addEventListener("click", function() {
-		table_row.remove();
-	})
+		console.log("Tomato");
+	}, false);
 }
 
 function searchContact()
