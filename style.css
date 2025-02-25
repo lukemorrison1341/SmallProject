@@ -205,5 +205,6 @@ svg {
 .contact-info {
     flex-grow: 100;
     flex-direction: column;
-    align-self: baseline;
+    display: flex;
+    align-items: baseline;
 }
