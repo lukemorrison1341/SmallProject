@@ -182,6 +182,10 @@ function doLogout()
 function addContact()
 {
 	console.log("Add!");
+	const results_area = document.getElementById("results-box");
+	const table_row = document.createElement("div");
+	table_row.innerHTML = "Hello!";
+	results_area.prepend(table_row);
 }
 
 function searchContact()
