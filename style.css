@@ -167,11 +167,11 @@ svg {
     width: 2rem;
 }
 
-.edit, .delete, #cancel {
+.edit, .delete, #confirm, #cancel {
     fill: rgba(255,255,255,.7);
 }
 
-.edit:hover {
+.edit:hover, #confirm:hover {
     fill: white;
 }
 
