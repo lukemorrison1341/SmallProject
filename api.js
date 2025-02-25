@@ -5,6 +5,7 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+let adding_contact = false;
 
 
 function doLogin()
@@ -181,6 +182,9 @@ function doLogout()
 
 function addContact()
 {
+	if (adding_contact) return;
+	adding_contact = true;
+
 	const results_area = document.getElementById("results-box");
 	const table_row = document.createElement("div");
 	table_row.classList.add("contact-row");
@@ -229,11 +233,19 @@ function addContact()
 
 	let confirm_btn = document.getElementById("confirm");
 	confirm_btn.addEventListener("click", function() {
-		console.log(name_field.value);
+		if (name_field.value === "" || email_field.value === "" || phone_field === "") {
+			return;
+		}
+
+		let tmp = {
+
+		}
+		adding_contact = false;
 	}, false);
 	let cancel_btn = document.getElementById("cancel");
 	cancel_btn.addEventListener("click", function() {
 		table_row.remove();
+		adding_contact = false;
 	}, false);
 }
 
