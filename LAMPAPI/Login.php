@@ -1,36 +1,67 @@
-<?php
-$inData = getRequestInfo();
+ <?php
 
-$username = $inData["username"];
-$password = $inData["password"]; 
+	$inData = getRequestInfo();
+	
+	$username = $inData["username"];
+	$password = $inData["password"];
 
-$conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
+	$conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
+	
+	
+	if( $conn->connect_error )
+	{
+		returnWithError( $conn->connect_error );
+	}
+	else
+	{
+		$stmt = $conn->prepare("SELECT ID, Password FROM Users WHERE Username=?");
+		$stmt->bind_param("s", $username);
+		$stmt->execute();
+		$result = $stmt->get_result();
 
-if ($conn->connect_error) {
-    returnWithError($conn->connect_error);
-} else {
-    
-    $stmt = $conn->prepare("SELECT ID, Password FROM Users WHERE Username=?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+		if ($row = $result->fetch_assoc()) 
+		{
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $storedPassword = $row["Password"];
+			if ($password == $row["Password"]) 
+			{
+				returnWithInfo($row["ID"]);
+			} 
+			else 
+			{
+				returnWithError("Try Again.");
+			}
+		} 
+		else 
+		{
+			returnWithError("Try Again.");
+		}
 
-        
-        if (password_verify($password, $storedPassword)) {
-            returnWithInfo("Login successful.");
-        } else {
-            returnWithError("Invalid username or password.");
-        }
-    } else {
-        returnWithError("Username not found.");
-    }
+		$stmt->close();
+		$conn->close();
+	}
+	
+	function getRequestInfo()
+	{
+		return json_decode(file_get_contents('php://input'), true);
+	}
 
-    $stmt->close();
-    $conn->close();
-}
-?>
+	function sendResultInfoAsJson( $obj )
+	{
+		header('Content-type: application/json');
+		echo $obj;
+	}
+	
+	function returnWithError( $err )
+	{
+		$retValue = '{"id":0,"error":"' . $err . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
+	
+	function returnWithInfo($id)
+	{
+		$retValue = '{"id":' . $id . ',"error":""}';
+		sendResultInfoAsJson( $retValue );
+	}
+	
+?> 
 
