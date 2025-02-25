@@ -231,5 +231,8 @@ svg {
 #results-box input {
     height: 30px;
     width: 20rem;
+}
+
+#results-box .input-box {
     margin: 0;
 }
