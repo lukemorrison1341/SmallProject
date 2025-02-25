@@ -193,6 +193,7 @@ function addContact()
 	let tmp = document.createElement('input');
 	document.createElement('input');
 	tmp.type = "text";
+	tmp.placeholder = "Name";
 	tmp.name = "name";
 	tmp.id = "name";
 	div.appendChild(tmp);
@@ -202,6 +203,7 @@ function addContact()
 	div.classList.add("input-box");
 	tmp = document.createElement('input');
 	tmp.type = "email";
+	tmp.placeholder = "Email";
 	tmp.name = "email";
 	tmp.id = "email";
 	div.appendChild(tmp);
@@ -211,6 +213,7 @@ function addContact()
 	div.classList.add("input-box");
 	tmp = document.createElement('input');
 	tmp.type = "tel";
+	tmp.placeholder = "Phone";
 	tmp.name = "phone";
 	tmp.id = "phone";
 	div.appendChild(tmp);
