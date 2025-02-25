@@ -233,7 +233,13 @@ function addContact()
 
 	let confirm_btn = document.getElementById("confirm");
 	confirm_btn.addEventListener("click", function() {
-		if (name_field.value === "" || email_field.value === "" || phone_field === "") {
+		if (name_field.value === "" || email_field.value === "" || phone_field.value === "") {
+			return;
+		}
+		else if (!isValidEmail(email_field.value)) {
+			return;
+		}
+		else if (!isValidPhoneNumber(phone_field.value)) {
 			return;
 		}
 
@@ -242,7 +248,7 @@ function addContact()
 			userId: userId,
 			firstName: name[0],
 			lastName: (name.length > 1) ? name[1] : "",
-			phone: phone_field.value.replace(/(\d{3})(\d{3})(\d{4})(\d*)/, '$1-$2-$3'),
+			phone: (hasNoDashes(phone_field.value)) ? phone_field.value.replace(/(\d{3})(\d{3})(\d{4})(\d*)/, '$1-$2-$3') : phone_field.value,
 			email: email_field.value
 		};
 
@@ -386,4 +392,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+function isValidEmail(email) {
+	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	return emailPattern.test(email);
+}
 
+function isValidPhoneNumber(phoneNumber) {
+	const phonePattern = /^\d{3}-?\d{3}-?\d{4}$/;
+	return phonePattern.test(phoneNumber);
+}
+
+function hasNoDashes(phoneNumber) {
+	const phonePattern = /^\d{10}$/;
+	return phonePattern.test(phoneNumber);
+}
