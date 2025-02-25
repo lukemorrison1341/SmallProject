@@ -197,7 +197,7 @@ svg {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.contact-row div {
+.contact-row svg {
     justify-self: center;
     align-items: center;
 }
