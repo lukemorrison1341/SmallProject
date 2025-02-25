@@ -242,7 +242,7 @@ function addContact()
 			userId: userId,
 			firstName: name[0],
 			lastName: (name.length > 1) ? name[1] : "",
-			phone: phone_field.value,
+			phone: phone_field.value.replace(/(\d{3})(\d{3})(\d{4})(\d*)/, '$1-$2-$3'),
 			email: email_field.value
 		};
 
