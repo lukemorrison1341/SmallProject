@@ -303,6 +303,7 @@ function searchAllContacts()
 					const table_row = document.createElement('div');
 					table_row.classList.add("contact-row");
 					const contact_div = document.createElement('div');
+					contact_div.classList.add("contact-info");
 					table_row.appendChild(contact_div);
 					tmp = document.createElement('p');
 					tmp.innerHTML = jsonObject.contacts[i].Name;
