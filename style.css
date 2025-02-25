@@ -197,6 +197,10 @@ svg {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.contact-row div {
+    justify-content: center;
+}
+
 .contact-info {
     flex-grow: 100;
 }
