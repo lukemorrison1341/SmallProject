@@ -302,12 +302,15 @@ function createContactElement(contactObject) {
 	contact_div.classList.add("contact-info");
 	table_row.appendChild(contact_div);
 	let tmp = document.createElement('p');
+	tmp.classList.add("name");
 	tmp.innerHTML = contactObject.Name;
 	contact_div.appendChild(tmp);
 	tmp = document.createElement('p');
+	tmp.classList.add("email");
 	tmp.innerHTML = contactObject.Email;
 	contact_div.appendChild(tmp);
 	tmp = document.createElement('p');
+	tmp.classList.add("phone");
 	tmp.innerHTML = contactObject.Phone;
 	contact_div.appendChild(tmp);
 	tmp = document.createElement('div');
