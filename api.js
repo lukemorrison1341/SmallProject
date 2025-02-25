@@ -237,7 +237,7 @@ function addContact()
 			return;
 		}
 
-		let name = name_field.split(" ");
+		let name = name_field.value.split(" ");
 		let tmp = {
 			userId: userId,
 			firstName: name[0],
@@ -245,7 +245,7 @@ function addContact()
 			phone: phone_field.value,
 			email: email_field.value
 		};
-		
+
 		console.log(tmp);
 		adding_contact = false;
 	}, false);
