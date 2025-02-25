@@ -237,9 +237,16 @@ function addContact()
 			return;
 		}
 
+		let name = name_field.split(" ");
 		let tmp = {
-
-		}
+			userId: userId,
+			firstName: name[0],
+			lastName: (name.length > 1) ? name[1] : "",
+			phone: phone_field.value,
+			email: email_field.value
+		};
+		
+		console.log(tmp);
 		adding_contact = false;
 	}, false);
 	let cancel_btn = document.getElementById("cancel");
