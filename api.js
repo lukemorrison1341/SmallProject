@@ -230,7 +230,7 @@ function addContact()
 	let confirm_btn = document.getElementById("confirm");
 	let cancel_btn = document.getElementById("cancel");
 	cancel_btn.addEventListener("click", function() {
-		console.log("Tomato");
+		table_row.remove();
 	}, false);
 }
 
