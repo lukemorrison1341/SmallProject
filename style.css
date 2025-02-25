@@ -227,3 +227,7 @@ svg {
 ::-webkit-scrollbar-thumb:hover {
     background: white;
 }
+
+#results-box input {
+    height: 30px;
+}
