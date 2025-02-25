@@ -190,32 +190,32 @@ function addContact()
 
 	let div = document.createElement('div');
 	div.classList.add("input-box");
-	let tmp = document.createElement('input');
+	let name_field = document.createElement('input');
 	document.createElement('input');
-	tmp.type = "text";
-	tmp.placeholder = "Name";
-	tmp.name = "name";
-	tmp.id = "name";
-	div.appendChild(tmp);
+	name_field.type = "text";
+	name_field.placeholder = "Name";
+	name_field.name = "name";
+	name_field.id = "name";
+	div.appendChild(name_field);
 	contact_div.appendChild(div);
 
 	div = document.createElement('div');
 	div.classList.add("input-box");
-	tmp = document.createElement('input');
-	tmp.type = "email";
-	tmp.placeholder = "Email";
-	tmp.name = "email";
-	tmp.id = "email";
+	let email_field = document.createElement('input');
+	email_field.type = "email";
+	email_field.placeholder = "Email";
+	email_field.name = "email";
+	email_field.id = "email";
 	div.appendChild(tmp);
 	contact_div.appendChild(div);
 
 	div = document.createElement("div");
 	div.classList.add("input-box");
-	tmp = document.createElement('input');
-	tmp.type = "tel";
-	tmp.placeholder = "Phone";
-	tmp.name = "phone";
-	tmp.id = "phone";
+	let phone_field = document.createElement('input');
+	phone_field.type = "tel";
+	phone_field.placeholder = "Phone";
+	phone_field.name = "phone";
+	phone_field.id = "phone";
 	div.appendChild(tmp);
 	contact_div.appendChild(div);
 
@@ -228,6 +228,9 @@ function addContact()
 	results_area.prepend(table_row);
 
 	let confirm_btn = document.getElementById("confirm");
+	confirm_btn.addEventListener("click", function() {
+		console.log(name_field.value);
+	}, false);
 	let cancel_btn = document.getElementById("cancel");
 	cancel_btn.addEventListener("click", function() {
 		table_row.remove();
