@@ -202,9 +202,8 @@ svg {
     align-items: center;
 }
 
-.contact-info {
+.contact-row .contact-info {
     flex-grow: 100;
     flex-direction: column;
-    display: flex;
     align-items: baseline;
 }
