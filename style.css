@@ -13,7 +13,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100vh;
+    min-height: 100vh;
     background: url('unnamed.jpg') no-repeat;
     background-size: cover;
 }
