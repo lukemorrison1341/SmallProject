@@ -227,8 +227,8 @@ function addContact()
 	table_row.appendChild(tmp);
 	results_area.prepend(table_row);
 
-	const confirm_btn = document.getElementsByClassName("confirm");
-	const cancel_btn = document.getElementsByClassName("cancel");
+	let confirm_btn = document.getElementsByClassName("confirm");
+	let cancel_btn = document.getElementsByClassName("cancel");
 	cancel_btn.addEventListener("click", function(e) {
 		console.log("Tomato");
 	}, false);
