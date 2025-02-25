@@ -195,3 +195,7 @@ svg {
     flex-direction: row;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+.contact-info {
+    flex-grow: 100;
+}
