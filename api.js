@@ -95,17 +95,12 @@ function readCookie()
 	
 	if( userId < 0 )
 	{
-		window.location.href = "index.html";
+		console.log(window.location.href);
+		// window.location.href = "index.html";
 	}
 	else
 	{
 		console.log(userId);
-	}
-}
-
-function alreadyLoggedIn() {
-	if (userId > 0) {
-		window.location.href = "contacts.html";
 	}
 }
 
