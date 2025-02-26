@@ -25,11 +25,11 @@ header {
     top: 0;
     left: 0;
     display: flex;
-    padding: 1rem;
 }
 
-header img {
+header #site-logo {
     max-height: 10rem;
+    margin-left: 3rem;
 }
 
 #logout-div {
