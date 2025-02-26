@@ -264,6 +264,7 @@ function addContact()
 	cancel_btn.addEventListener("click", function() {
 		table_row.remove();
 		adding_contact = false;
+		searchAllContacts();
 	}, false);
 }
 
