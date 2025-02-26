@@ -379,9 +379,13 @@ function searchAllContacts()
 }
 
 function deleteContact(contact_id) {
-	
-	let url = urlBase + "/DeleteContact." + extension + "?userId=" + userId + "&contactId=" + contact_id;
+	let url_params = {
+		userId: userId,
+		contactId: parseInt(contact_id)
+	}
 
+	url_params = URLSearchParams(url_params).toString();
+	let url = urlBase + "/DeleteContact." + extension + "?" + url_params;
 	let xhr = new XMLHttpRequest();
 	console.log(url);
 	xhr.open("DELETE", url, true);
