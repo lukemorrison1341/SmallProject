@@ -288,8 +288,6 @@ function addContact()
 	cancel_btn.addEventListener("click", function() {
 		table_row.remove();
 		adding_contact = false;
-		results_area.innerHTML = "";
-		searchAllContacts();
 	}, false);
 }
 
