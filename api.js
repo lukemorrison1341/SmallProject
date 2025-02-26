@@ -103,6 +103,12 @@ function readCookie()
 	}
 }
 
+function alreadyLoggedIn() {
+	if (userId > 0) {
+		window.location.href = "contacts.html";
+	}
+}
+
 function doRegister() {
 
 	let username = document.getElementById("username").value;
