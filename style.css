@@ -19,6 +19,10 @@ body{
     background-size: cover;
 }
 
+header {
+    display: flex;
+}
+
 .wrapper{
     min-width: 600px;
     min-height: 350px;
