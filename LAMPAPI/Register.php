@@ -24,9 +24,12 @@
 		} 
 		else 
 		{
-			// Insert new user
+			// Hash the password before storing it
+			$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+			// Insert new user with the hashed password
 			$stmt = $conn->prepare("INSERT INTO Users (Username, Password) VALUES(?, ?)");
-			$stmt->bind_param("ss", $username, $password);
+			$stmt->bind_param("ss", $username, $hashedPassword);
 
 			if ($stmt->execute()) 
 			{

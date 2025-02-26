@@ -1,12 +1,10 @@
- <?php
-
+<?php
 	$inData = getRequestInfo();
 	
 	$username = $inData["username"];
 	$password = $inData["password"];
 
 	$conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
-	
 	
 	if( $conn->connect_error )
 	{
@@ -21,8 +19,8 @@
 
 		if ($row = $result->fetch_assoc()) 
 		{
-
-			if ($password == $row["Password"]) 
+			// Use password_verify to check the hashed password
+			if (password_verify($password, $row["Password"])) 
 			{
 				returnWithInfo($row["ID"]);
 			} 
@@ -62,6 +60,4 @@
 		$retValue = '{"id":' . $id . ',"error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
-	
-?> 
-
+?>
