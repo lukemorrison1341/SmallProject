@@ -16,15 +16,16 @@
     height: 100%;
     object-fit: cover;
     /* scale: 1; */
-  }
+}
+
 body{
     
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background: url('TestBackground.png') no-repeat;
-    background-size: cover; */
+    background: url('VideoBackground2.mp4') no-repeat;
+    background-size: cover;
 }
 
 .wrapper{
