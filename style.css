@@ -25,11 +25,7 @@ header {
     top: 0;
     left: 0;
     display: flex;
-    padding: 2rem 0;
-}
-
-header #site-logo {
-    margin-left: 3rem;
+    padding: 2rem 3rem;
 }
 
 header img {
