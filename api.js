@@ -185,6 +185,11 @@ function addContact()
 	if (adding_contact) return;
 	adding_contact = true;
 
+	let error_p = document.getElementById("error");
+	if (error_p) {
+		error_p.remove();
+	}
+
 	const results_area = document.getElementById("results-box");
 	const table_row = document.createElement("div");
 	table_row.classList.add("contact-row");
