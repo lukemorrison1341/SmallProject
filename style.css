@@ -24,8 +24,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('VideoBackground2.mp4') no-repeat;
-    background-size: cover;
+    /* background: url('VideoBackground2.mp4') no-repeat;
+    background-size: cover; */
 }
 
 .wrapper{
