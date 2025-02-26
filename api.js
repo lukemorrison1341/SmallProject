@@ -381,7 +381,7 @@ function searchAllContacts()
 function deleteContact(contact_id) {
 	let tmp = {
 		userId: userId,
-		contactId: contact_id
+		contactId: parseInt(contact_id)
 	};
 
 	let jsonPayload = JSON.stringify(tmp);
