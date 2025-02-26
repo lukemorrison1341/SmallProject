@@ -24,7 +24,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('GifBackground.gif') no-repeat;
+    background: url('BackgroundGIF.gif') no-repeat;
     background-size: cover;
 }
 
