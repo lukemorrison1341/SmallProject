@@ -212,7 +212,7 @@ svg {
 
 .contact-row .contact-info {
     flex-grow: 100;
-    gap: 10px;
+    gap: .5rem;
     flex-direction: column;
     align-items: baseline;
 }
