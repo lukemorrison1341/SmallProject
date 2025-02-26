@@ -96,7 +96,7 @@ function readCookie()
 	if( userId < 0 )
 	{
 		const site_url = window.location.protocol + "//" + window.location.host + "/" 
-		if (window.location.href === site_url || window.location.href === site_url + "index.html/") return;
+		if (window.location.href === site_url || window.location.href === site_url + "index.html" || window.location.href === site_url + "index.html/") return;
 		window.location.href = "index.html";
 	}
 	else
