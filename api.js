@@ -389,23 +389,15 @@ function deleteContact(contact_id) {
 	let xhr = new XMLHttpRequest();
 	console.log(url);
 	xhr.open("DELETE", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				window.location.href = "contacts.html";
-			}
-			
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		return;
-	}
+	xhr.onload = function () {
+		if (xhr.status >= 200 && xhr.status < 300) {
+			console.log('Resource deleted successfully:', xhr.responseText);
+		} else {
+			console.error('Request failed with status:', xhr.status);
+		}
+	};
+
+	xhr.send();
 }
 
 function createContactElement(contactObject) {
