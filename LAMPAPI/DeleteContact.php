@@ -1,17 +1,15 @@
 <?php
 
 $userId = $_GET["userId"];
-$firstName = $_GET["firstName"];
-$lastName = $_GET["lastName"];
+$contactId = $_GET["contactId"];
 
 $conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_manager");
 
 if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
-    $stmt = $conn->prepare("DELETE FROM Contacts WHERE Name = ? AND UserID = ?");
-    $name = $firstName . ' ' . $lastName;
-    $stmt->bind_param("si", $name, $userId);
+    $stmt = $conn->prepare("DELETE FROM Contacts WHERE ContactID = ? AND UserID = ?");
+    $stmt->bind_param("ii", $contactId, $userId);
 
     if ($stmt->execute()) {
         if ($stmt->affected_rows > 0) {
