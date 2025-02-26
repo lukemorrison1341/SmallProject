@@ -379,7 +379,34 @@ function searchAllContacts()
 }
 
 function deleteContact(contact_id) {
-	console.log(contact_id);
+	let tmp = {
+		userId: userId,
+		contactId: contact_id
+	};
+
+	let jsonPayload = JSON.stringify(tmp);
+	let url = urlBase + "/DeleteContact." + extension;
+
+	console.log(jsonPayload);
+	let xhr = new XMLHttpRequest();
+	xhr.open("DELETE", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				window.location.href = "contacts.html";
+			}
+			
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		return;
+	}
 }
 
 function createContactElement(contactObject) {
