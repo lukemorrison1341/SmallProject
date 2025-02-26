@@ -23,6 +23,10 @@ header {
     display: flex;
 }
 
+header img {
+    max-height: 20rem;
+}
+
 .wrapper{
     min-width: 600px;
     min-height: 350px;
