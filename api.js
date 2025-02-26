@@ -191,6 +191,7 @@ function addContact()
 	}
 
 	const results_area = document.getElementById("results-box");
+	results_area.scrollTop = 0;
 	const table_row = document.createElement("div");
 	table_row.classList.add("contact-row");
 	const contact_div = document.createElement('div');
