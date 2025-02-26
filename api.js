@@ -384,7 +384,7 @@ function deleteContact(contact_id) {
 		contactId: parseInt(contact_id)
 	}
 
-	url_params = URLSearchParams(url_params).toString();
+	url_params = new URLSearchParams(url_params).toString();
 	let url = urlBase + "/DeleteContact." + extension + "?" + url_params;
 	let xhr = new XMLHttpRequest();
 	console.log(url);
