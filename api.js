@@ -93,15 +93,17 @@ function readCookie()
 		}
 	}
 	
+	const site_url = window.location.protocol + "//" + window.location.host + "/" 
 	if( userId < 0 )
 	{
-		const site_url = window.location.protocol + "//" + window.location.host + "/" 
+		
 		if (window.location.href === site_url || window.location.href === site_url + "index.html" || window.location.href === site_url + "index.html/") return;
 		window.location.href = "index.html";
 	}
 	else
 	{
-		console.log(userId);
+		if (window.location.href === site_url + "contacts.html" || window.location.href === site_url + "contacts.html/") return;
+		window.location.href = "contacts.html";
 	}
 }
 
