@@ -378,11 +378,18 @@ function searchAllContacts()
 	
 }
 
+function deleteContact() {
+	let tmp = {
+
+	}
+}
+
 function createContactElement(contactObject) {
 	const table_row = document.createElement('div');
 	table_row.classList.add("contact-row");
 	const contact_div = document.createElement('div');
 	contact_div.classList.add("contact-info");
+	contact_div.setAttribute("data-id", contactObject.ID);
 	table_row.appendChild(contact_div);
 	let tmp = document.createElement('p');
 	tmp.classList.add("name");
@@ -401,6 +408,10 @@ function createContactElement(contactObject) {
 	table_row.appendChild(tmp);
 	tmp = document.createElement('div');
 	tmp.innerHTML = '<svg class="delete" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
+	tmp.addEventListener("click", function() {
+
+	}, false);
+	
 	table_row.appendChild(tmp);
 	return table_row
 }
