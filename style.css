@@ -25,6 +25,7 @@ header {
     top: 0;
     left: 0;
     display: flex;
+    padding: 2rem 0;
 }
 
 header #site-logo {
@@ -32,7 +33,7 @@ header #site-logo {
 }
 
 header img {
-    max-height: 10rem;
+    max-height: 6rem;
 }
 
 #logout-div {
