@@ -391,9 +391,10 @@ function deleteContact(contact_id) {
 	xhr.open("DELETE", url, true);
 	xhr.onload = function () {
 		if (xhr.status >= 200 && xhr.status < 300) {
-			alert(xhr.responseText);
+			alert("Contact Deleted!");
+			window.location.href = "contacts.html";
 		} else {
-			console.error('Request failed with status:', xhr.status);
+			alert('Request failed with status:', xhr.status);
 		}
 	};
 
