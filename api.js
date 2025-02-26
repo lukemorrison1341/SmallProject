@@ -384,28 +384,21 @@ function deleteContact(contact_id) {
 		contactId: parseInt(contact_id)
 	}
 
-	url_params = URLSearchParams(url_params).toString();
+	url_params = new URLSearchParams(url_params).toString();
 	let url = urlBase + "/DeleteContact." + extension + "?" + url_params;
 	let xhr = new XMLHttpRequest();
 	console.log(url);
 	xhr.open("DELETE", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && this.status == 200) 
-			{
-				window.location.href = "contacts.html";
-			}
-			
-		};
-		xhr.send(jsonPayload);
-	}
-	catch(err)
-	{
-		return;
-	}
+	xhr.onload = function () {
+		if (xhr.status >= 200 && xhr.status < 300) {
+			alert("Contact Deleted!");
+			window.location.href = "contacts.html";
+		} else {
+			alert('Request failed with status:', xhr.status);
+		}
+	};
+
+	xhr.send();
 }
 
 function createContactElement(contactObject) {
