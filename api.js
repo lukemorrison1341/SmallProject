@@ -102,7 +102,7 @@ function readCookie()
 	}
 	else
 	{
-		if (window.location.href === site_url + "contacts.html" || window.location.href === site_url + "contacts.html/") return;
+		if (window.location.href === site_url + "contacts.html") return;
 		window.location.href = "contacts.html";
 	}
 }
