@@ -383,6 +383,7 @@ function deleteContact(contact_id) {
 	let url = urlBase + "/DeleteContact." + extension + "?userId=" + userId + "&contactId=" + contact_id;
 
 	let xhr = new XMLHttpRequest();
+	console.log(url);
 	xhr.open("DELETE", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
