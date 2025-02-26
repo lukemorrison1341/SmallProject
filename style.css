@@ -189,8 +189,6 @@ svg {
     fill: #ff3737;
 }
 
-
-
 #results-box {
     margin-top: 1rem;
     max-height: 15rem;
@@ -214,6 +212,7 @@ svg {
 
 .contact-row .contact-info {
     flex-grow: 100;
+    gap: 10px;
     flex-direction: column;
     align-items: baseline;
 }
