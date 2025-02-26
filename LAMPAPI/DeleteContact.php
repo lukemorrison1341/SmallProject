@@ -8,7 +8,7 @@ $conn = new mysqli("localhost", "contact_app", "UniversalP@ssw0rd!", "contact_ma
 if ($conn->connect_error) {
     returnWithError($conn->connect_error);
 } else {
-    $stmt = $conn->prepare("DELETE FROM Contacts WHERE ContactID = ? AND UserID = ?");
+    $stmt = $conn->prepare("DELETE FROM Contacts WHERE ID = ? AND UserID = ?");
     $stmt->bind_param("ii", $contactId, $userId);
 
     if ($stmt->execute()) {
