@@ -20,11 +20,12 @@ body{
 }
 
 header {
+    position: fixed;
     display: flex;
 }
 
 header img {
-    max-height: 20rem;
+    max-height: 10rem;
 }
 
 .wrapper{
