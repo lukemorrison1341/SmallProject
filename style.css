@@ -31,6 +31,10 @@ header img {
     max-height: 10rem;
 }
 
+#logout-div {
+    align-self: flex-end;
+}
+
 .wrapper{
     min-width: 600px;
     min-height: 350px;
