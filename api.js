@@ -322,6 +322,15 @@ function searchContact()
 			{
 
 				let jsonObject = JSON.parse( xhr.responseText );
+				if (jsonObject.results.length === 0) {
+					let paragraph = document.createElement("p");
+					paragraph.id = "error";
+					paragraph.style.textAlign = "center";
+					paragraph.innerHTML = "No Contacts Found";
+					results_area.append(paragraph);
+					return;
+				}
+
 				for(let i = 0; i < jsonObject.results.length; i++) {
 					results_area.appendChild(createContactElement(jsonObject.results[i]));
 				}
