@@ -94,7 +94,7 @@ header img {
     font-size: 20px;
 }
 
-#show-password-toggle {
+#show-password-toggle, #hide-password-toggle {
     display: block;
     right: 45px; 
     cursor: pointer;
@@ -111,7 +111,7 @@ header img {
     opacity: 0.8;
 }
 /* Adjust styles for the "show password" toggle button (eye icon) */
-#show-password-toggle {
+#show-password-toggle, #hide-password-toggle {
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.7);
     transition: opacity 0.3s ease;
