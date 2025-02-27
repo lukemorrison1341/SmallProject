@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
         });
     
-
+	console.log("Error");
 	const logout_btn = document.querySelector("#logout-div svg");
 	if (logout_btn) {
 		logout_btn.addEventListener("click", function() {
