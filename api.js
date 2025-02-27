@@ -505,13 +505,6 @@ function createContactElement(contactObject) {
 				{
 					if (this.readyState == 4 && this.status == 200) 
 					{
-						console.log("YO");
-						let jsonObject = JSON.parse( xhr.responseText );
-
-						if (jsonObject.error) {
-							console.log(jsonObject.error);
-							return;
-						}
 
 						window.location.href = "contacts.html";
 					}
