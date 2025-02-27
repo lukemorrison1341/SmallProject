@@ -485,9 +485,9 @@ function createContactElement(contactObject) {
 			edit_div.remove();
 			confirm.remove();
 			cancel.remove();
-			contact_div.appendChild(edit_btn);
-			contact_div.appendChild(delete_btn);
 			table_row.appendChild(contact_div);
+			table_row.appendChild(edit_btn);
+			table_row.appendChild(delete_btn);
 		}, false);
 		edit_btn.remove();
 
