@@ -213,7 +213,7 @@ svg {
     fill: rgba(255,255,255,.7);
 }
 
-.edit:hover, #confirm:hover, #logout {
+.edit:hover, #confirm:hover, #logout:hover {
     fill: white;
 }
 
