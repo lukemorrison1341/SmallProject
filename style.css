@@ -100,6 +100,27 @@ header img {
     cursor: pointer;
     text-align: center;
 }
+/* Add transition for a smooth experience when toggling visibility */
+.input-box input[type="password"], 
+.input-box input[type="text"] {
+    transition: all 0.3s ease; /* Smooth transition between states */
+}
+
+/* Ensure no background change during the hover */
+.input-box i:hover {
+    opacity: 0.8;
+}
+/* Adjust styles for the "show password" toggle button (eye icon) */
+#show-password-toggle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effect on the toggle */
+#show-password-toggle:hover {
+    opacity: 1;
+}
 
 .wrapper .btn{
     width: 100%;
