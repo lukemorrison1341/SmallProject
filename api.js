@@ -604,10 +604,7 @@ document.addEventListener("keydown", function(event) {
 	}
 	const img = document.createElement("img");
 	img.src = 'https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png';
-	img.style.position = "fixed";
-	img.style.zIndex = "1";
-	img.width = "100%";
-	img.height = "100%";
+	img.id = "easter-egg";
 	document.body.appendChild(img);
 })
 
