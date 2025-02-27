@@ -286,3 +286,16 @@ svg {
     object-fit: cover;  /* Ensures the video covers the entire screen without distortion */
     z-index: -1; /* Places the video behind all content */
 }
+
+#easter-egg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Make sure it's on top */
+}
