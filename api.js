@@ -362,7 +362,8 @@ function searchAllContacts()
 
 				if (jsonObject.error) {
 					tmp = document.createElement('p');
-					tmp.id = "error"
+					tmp.id = "error";
+					tmp.style.textAlign = "center";
 					tmp.innerHTML = jsonObject.error;
 					results_area.appendChild(tmp);
 					return;
