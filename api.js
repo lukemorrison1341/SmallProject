@@ -323,7 +323,6 @@ function searchContact()
 
 				let jsonObject = JSON.parse( xhr.responseText );
 				if (jsonObject.results.length === 0) {
-					console.log("Yo");
 					let paragraph = document.createElement("p");
 					paragraph.id = "error";
 					paragraph.style.textAlign = "center";
