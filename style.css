@@ -199,6 +199,7 @@ svg {
 
 #results-box {
     margin-top: 1rem;
+    min-height: 3rem;
     max-height: 15rem;
     border-radius: 10px;
     overflow: scroll;
