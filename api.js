@@ -6,6 +6,10 @@ let firstName = "";
 let lastName = "";
 
 let adding_contact = false;
+let easter_egg_enabled = false;
+const img = document.createElement("img");
+img.src = 'https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png';
+img.id = "easter-egg";
 
 let button_queue = [];
 const SECRET_PATTERN = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
@@ -602,10 +606,13 @@ document.addEventListener("keydown", function(event) {
 			return;
 		}
 	}
-	const img = document.createElement("img");
-	img.src = 'https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png';
-	img.id = "easter-egg";
-	document.body.appendChild(img);
+	if (!easter_egg_enabled) {
+		document.body.appendChild(img);
+	}
+	else {
+		img.remove();
+	}
+	
 })
 
 function isValidEmail(email) {
