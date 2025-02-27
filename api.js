@@ -509,6 +509,7 @@ function createContactElement(contactObject) {
 						let jsonObject = JSON.parse( xhr.responseText );
 
 						if (jsonObject.error) {
+							console.log(jsonObject.err);
 							return;
 						}
 
