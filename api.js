@@ -603,6 +603,7 @@ document.addEventListener("keydown", function(event) {
 		}
 	}
 	document.body.style.backgroundImage = "url('https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png')";
+	document.body.style.backgroundSize = "contain";
 })
 
 function isValidEmail(email) {
