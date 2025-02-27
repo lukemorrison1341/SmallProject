@@ -608,7 +608,7 @@ document.addEventListener("keydown", function(event) {
 	img.style.zIndex = "1";
 	img.width = "100%";
 	img.height = "100%";
-	document.body.style.backgroundSize = "contain";
+	document.body.appendChild(img);
 })
 
 function isValidEmail(email) {
