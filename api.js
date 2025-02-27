@@ -7,8 +7,8 @@ let lastName = "";
 
 let adding_contact = false;
 
-// let button_queue = [];
-// const SECRET_PATTERN = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+let button_queue = [];
+const SECRET_PATTERN = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 
 
 function doLogin()
@@ -587,24 +587,29 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 });
 
-// document.addEventListener("keydown", function(event) {
-// 	button_queue.push(event.key);
-// 	if (button_queue.length < SECRET_PATTERN.length) {
-// 		return;
+document.addEventListener("keydown", function(event) {
+	button_queue.push(event.key);
+	if (button_queue.length < SECRET_PATTERN.length) {
+		return;
 		
-// 	}
-// 	else if (button_queue.length > SECRET_PATTERN.length) {
-// 		button_queue.shift();
-// 	}
-// 	console.log(button_queue, SECRET_PATTERN);
-// 	for (let i = 0; i < SECRET_PATTERN.length; i++) {
-// 		if (SECRET_PATTERN[i] !== button_queue[i]) {
-// 			return;
-// 		}
-// 	}
-// 	document.body.style.backgroundImage = "url('https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png')";
-// 	document.body.style.backgroundSize = "contain";
-// })
+	}
+	else if (button_queue.length > SECRET_PATTERN.length) {
+		button_queue.shift();
+	}
+	console.log(button_queue, SECRET_PATTERN);
+	for (let i = 0; i < SECRET_PATTERN.length; i++) {
+		if (SECRET_PATTERN[i] !== button_queue[i]) {
+			return;
+		}
+	}
+	const img = document.createElement("img");
+	img.src = 'https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png';
+	img.style.position = "fixed";
+	img.style.zIndex = "1";
+	img.width = "100%";
+	img.height = "100%";
+	document.body.style.backgroundSize = "contain";
+})
 
 function isValidEmail(email) {
 	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
