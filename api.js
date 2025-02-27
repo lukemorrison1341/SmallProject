@@ -535,6 +535,13 @@ function createContactElement(contactObject) {
 
 // Show password toggle
 document.addEventListener('DOMContentLoaded', function() {
+	const logout_btn = document.querySelector("#logout-div svg");
+	if (logout_btn) {
+		logout_btn.addEventListener("click", function() {
+			doLogout();
+		});
+	}
+	
     const showPasswordToggle = document.getElementById("show-password-toggle");
     const hidePasswordToggle = document.getElementById("hide-password-toggle");
     const passwordField = document.getElementById("password");
@@ -555,14 +562,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
         });
-    
-	console.log("Error");
-	const logout_btn = document.querySelector("#logout-div svg");
-	if (logout_btn) {
-		logout_btn.addEventListener("click", function() {
-			doLogout();
-		});
-	}
 
 function isValidEmail(email) {
 	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
