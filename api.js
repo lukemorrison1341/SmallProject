@@ -589,22 +589,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("keydown", function(event) {
 	button_queue.push(event.key);
-	console.log(button_queue, SECRET_PATTERN);
 	if (button_queue.length < SECRET_PATTERN.length) {
 		return;
 		
 	}
 	else if (button_queue.length > SECRET_PATTERN.length) {
 		button_queue.shift();
-		if (button_queue.length > SECRET_PATTERN.length) {
-			button_queue.shift();
-		}
 	}
+	console.log(button_queue, SECRET_PATTERN);
 	for (let i = 0; i < SECRET_PATTERN.length; i++) {
 		if (SECRET_PATTERN[i] !== button_queue[i]) {
 			return;
 		}
 	}
+	console.log("YEP");
 	document.body.style.background = "url('https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png') no repeat";
 })
 
