@@ -8,6 +8,7 @@ let lastName = "";
 let adding_contact = false;
 
 let button_queue = [];
+const SECRET_PATTERN = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 
 
 function doLogin()
@@ -588,6 +589,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("keydown", function(event) {
 	console.log(event.key);
+	button_queue.push(event.key);
+	if (button_queue.length < SECRET_PATTERN.length) {
+		return;
+		
+	}
+	else if (button_queue.length > SECRET_PATTERN.length) {
+		button_queue.shift();
+	}
+	for (let i = 0; i < SECRET_PATTERN.length; i++) {
+		if (SECRET_PATTERN[i] !== button_queue[i]) {
+			return;
+		}
+	}
+	document.body.style.background = "url('https://www.cs.ucf.edu/wp-content/uploads/2019/09/Matthew-Gerber-news-e1572298128551.png') no repeat";
 })
 
 function isValidEmail(email) {
