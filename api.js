@@ -544,7 +544,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const search_btn = document.getElementById("search");
 	search_btn.addEventListener("keydown", function (event) {
-		console.log(event.key);
+		if (event.key === "Enter") {
+			searchContact();
+		}
 	})
 
 	const showPasswordToggle = document.getElementById("show-password-toggle");
