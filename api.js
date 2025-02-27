@@ -454,6 +454,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+	const logout_btn = document.querySelector("#logout-div svg");
+	if (!logout_btn) return;
+	logout_btn.addEventListener("click", function() {
+		doLogout();
+	})
 });
 
 function isValidEmail(email) {
