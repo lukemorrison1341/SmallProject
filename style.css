@@ -135,7 +135,7 @@ header img {
     
 }
 
-.wrapper .btn:hover, .signupbutton:hover {
+.wrapper .btn:hover, .wrapper .signupbutton:hover {
     background: rgb(210, 210, 210);
 }
 
