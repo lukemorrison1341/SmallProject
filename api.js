@@ -438,7 +438,7 @@ function createContactElement(contactObject) {
 		let name_field = document.createElement('input');
 		document.createElement('input');
 		name_field.type = "text";
-		name_field.placeholder = "Name";
+		name_field.value = contactObject.name;
 		name_field.name = "name";
 		name_field.id = "name";
 		div.appendChild(name_field);
@@ -448,7 +448,7 @@ function createContactElement(contactObject) {
 		div.classList.add("input-box");
 		let email_field = document.createElement('input');
 		email_field.type = "email";
-		email_field.placeholder = "Email";
+		email_field.value = contactObject.email;
 		email_field.name = "email";
 		email_field.id = "email";
 		div.appendChild(email_field);
@@ -458,7 +458,7 @@ function createContactElement(contactObject) {
 		div.classList.add("input-box");
 		let phone_field = document.createElement('input');
 		phone_field.type = "tel";
-		phone_field.placeholder = "Phone";
+		phone_field.value = contactObject.phone;
 		phone_field.name = "phone";
 		phone_field.id = "phone";
 		div.appendChild(phone_field);
