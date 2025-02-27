@@ -588,8 +588,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener("keydown", function(event) {
-	console.log(event.key);
 	button_queue.push(event.key);
+	console.log(button_queue, SECRET_PATTERN);
 	if (button_queue.length < SECRET_PATTERN.length) {
 		return;
 		
