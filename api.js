@@ -518,7 +518,7 @@ function createContactElement(contactObject) {
 			}
 			catch(err)
 			{
-				// Do nothing.
+				console.log("POOP");
 			}
 		}, false);
 		cancel = document.createElement('div');
@@ -563,10 +563,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
 	const logout_btn = document.querySelector("#logout-div svg");
-	if (!logout_btn) return;
-	logout_btn.addEventListener("click", function() {
-		doLogout();
-	});
+	if (logout_btn) {
+		logout_btn.addEventListener("click", function() {
+			doLogout();
+		});
+	}
 
 function isValidEmail(email) {
 	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
