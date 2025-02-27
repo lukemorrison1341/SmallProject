@@ -209,11 +209,11 @@ svg {
     width: 2rem;
 }
 
-.edit, .delete, #confirm, #cancel {
+.edit, .delete, #confirm, #cancel, #logout {
     fill: rgba(255,255,255,.7);
 }
 
-.edit:hover, #confirm:hover {
+.edit:hover, #confirm:hover, #logout {
     fill: white;
 }
 
