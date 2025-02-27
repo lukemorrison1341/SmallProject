@@ -483,6 +483,8 @@ function createContactElement(contactObject) {
 		table_row.appendChild(tmp);
 		tmp.addEventListener("click", function() {
 			edit_div.remove();
+			contact_div.appendChild(edit_btn);
+			contact_div.appendChild(delete_btn);
 			table_row.appendChild(contact_div);
 		}, false);
 		edit_btn.remove();
