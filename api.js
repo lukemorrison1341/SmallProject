@@ -428,7 +428,40 @@ function createContactElement(contactObject) {
 	tmp = document.createElement('div');
 	tmp.innerHTML = '<svg class="edit" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>';
 	tmp.addEventListener("click", function() {
-		console.log(email.innerHTML);
+		const edit_div = document.createElement('div');
+		edit_div.classList.add("contact-info");
+		table_row.prepend(edit_div);
+
+		let div = document.createElement('div');
+		div.classList.add("input-box");
+		let name_field = document.createElement('input');
+		document.createElement('input');
+		name_field.type = "text";
+		name_field.placeholder = "Name";
+		name_field.name = "name";
+		name_field.id = "name";
+		div.appendChild(name_field);
+		edit_div.appendChild(div);
+
+		div = document.createElement('div');
+		div.classList.add("input-box");
+		let email_field = document.createElement('input');
+		email_field.type = "email";
+		email_field.placeholder = "Email";
+		email_field.name = "email";
+		email_field.id = "email";
+		div.appendChild(email_field);
+		edit_div.appendChild(div);
+
+		div = document.createElement("div");
+		div.classList.add("input-box");
+		let phone_field = document.createElement('input');
+		phone_field.type = "tel";
+		phone_field.placeholder = "Phone";
+		phone_field.name = "phone";
+		phone_field.id = "phone";
+		div.appendChild(phone_field);
+		edit_div.appendChild(div);
 	}, false);
 	table_row.appendChild(tmp);
 	tmp = document.createElement('div');
