@@ -534,37 +534,42 @@ function createContactElement(contactObject) {
 }
 
 // Show password toggle
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	const logout_btn = document.querySelector("#logout-div svg");
 	if (logout_btn) {
-		logout_btn.addEventListener("click", function() {
+		logout_btn.addEventListener("click", function () {
 			doLogout();
 		});
 	}
 
-    const showPasswordToggle = document.getElementById("show-password-toggle");
-    const hidePasswordToggle = document.getElementById("hide-password-toggle");
-    const passwordField = document.getElementById("password");
+	const search_btn = document.getElementById("search-button");
+	search_btn.addEventListener("keydown", function (event) {
+		console.log(event.key);
+	})
+
+	const showPasswordToggle = document.getElementById("show-password-toggle");
+	const hidePasswordToggle = document.getElementById("hide-password-toggle");
+	const passwordField = document.getElementById("password");
 	const confirmPasswordField = document.getElementById("confirmpassword");
 
-    if (showPasswordToggle) {
-        showPasswordToggle.addEventListener("click", function() {
-            passwordField.setAttribute("type", "text");
+	if (showPasswordToggle) {
+		showPasswordToggle.addEventListener("click", function () {
+			passwordField.setAttribute("type", "text");
 			if (confirmPasswordField) confirmPasswordField.setAttribute("type", "text");
-            showPasswordToggle.style.display = "none";
-            hidePasswordToggle.style.display = "inline";
-        });
-    }
+			showPasswordToggle.style.display = "none";
+			hidePasswordToggle.style.display = "inline";
+		});
+	}
 
-    if (hidePasswordToggle) {
-        hidePasswordToggle.addEventListener("click", function() {
-            passwordField.setAttribute("type", "password");
+	if (hidePasswordToggle) {
+		hidePasswordToggle.addEventListener("click", function () {
+			passwordField.setAttribute("type", "password");
 			if (confirmPasswordField) confirmPasswordField.setAttribute("type", "password");
-            showPasswordToggle.style.display = "inline";
-            hidePasswordToggle.style.display = "none";
-        });
-    }
-        });
+			showPasswordToggle.style.display = "inline";
+			hidePasswordToggle.style.display = "none";
+		});
+	}
+});
 
 function isValidEmail(email) {
 	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -580,8 +585,3 @@ function hasNoDashes(phoneNumber) {
 	const phonePattern = /^\d{10}$/;
 	return phonePattern.test(phoneNumber);
 }
-
-const search_btn = document.getElementById("search-button");
-search_btn.addEventListener("keydown", function(event) {
-	console.log(event.key);
-})
