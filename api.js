@@ -608,9 +608,11 @@ document.addEventListener("keydown", function(event) {
 	}
 	if (!easter_egg_enabled) {
 		document.body.appendChild(img);
+		easter_egg_enabled = true;
 	}
 	else {
 		img.remove();
+		easter_egg_enabled = false;
 	}
 	
 })
