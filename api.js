@@ -596,6 +596,9 @@ document.addEventListener("keydown", function(event) {
 	}
 	else if (button_queue.length > SECRET_PATTERN.length) {
 		button_queue.shift();
+		if (button_queue.length > SECRET_PATTERN.length) {
+			button_queue.shift();
+		}
 	}
 	for (let i = 0; i < SECRET_PATTERN.length; i++) {
 		if (SECRET_PATTERN[i] !== button_queue[i]) {
