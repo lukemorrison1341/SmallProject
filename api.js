@@ -581,3 +581,7 @@ function hasNoDashes(phoneNumber) {
 	return phonePattern.test(phoneNumber);
 }
 
+const search_btn = document.getElementById("search-button");
+search_btn.addEventListener("keydown", function(event) {
+	console.log(event.key);
+})
