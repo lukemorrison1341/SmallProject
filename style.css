@@ -34,6 +34,9 @@ header img {
 
 #logout-div {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
 }
 
 .wrapper{
