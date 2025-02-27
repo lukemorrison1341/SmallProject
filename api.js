@@ -497,27 +497,33 @@ function createContactElement(contactObject) {
 
 // Show password toggle
 document.addEventListener('DOMContentLoaded', function() {
-    let toggleIcon = document.getElementById('show-password-toggle');
-    if (toggleIcon) {
-        toggleIcon.addEventListener('click', function() {
-            var passwordField = document.getElementById('password');
-			var confirmpasswordField = document.getElementById('confirmpassword');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-				confirmpasswordField.type = 'text';
-            } else {
-                passwordField.type = 'password';
-				confirmpasswordField.type = 'password';
-            }
+    const showPasswordToggle = document.getElementById("show-password-toggle");
+    const hidePasswordToggle = document.getElementById("hide-password-toggle");
+    const passwordField = document.getElementById("password");
+
+    if (showPasswordToggle) {
+        showPasswordToggle.addEventListener("click", function() {
+            passwordField.setAttribute("type", "text");
+            showPasswordToggle.style.display = "none";
+            hidePasswordToggle.style.display = "inline";
         });
     }
+
+    if (hidePasswordToggle) {
+        hidePasswordToggle.addEventListener("click", function() {
+            passwordField.setAttribute("type", "password");
+            showPasswordToggle.style.display = "inline";
+            hidePasswordToggle.style.display = "none";
+        });
+    }
+        });
+    
 
 	const logout_btn = document.querySelector("#logout-div svg");
 	if (!logout_btn) return;
 	logout_btn.addEventListener("click", function() {
 		doLogout();
-	})
-});
+	});
 
 function isValidEmail(email) {
 	const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -533,3 +539,4 @@ function hasNoDashes(phoneNumber) {
 	const phonePattern = /^\d{10}$/;
 	return phonePattern.test(phoneNumber);
 }
+
