@@ -541,14 +541,16 @@ document.addEventListener('DOMContentLoaded', function() {
 			doLogout();
 		});
 	}
-	
+
     const showPasswordToggle = document.getElementById("show-password-toggle");
     const hidePasswordToggle = document.getElementById("hide-password-toggle");
     const passwordField = document.getElementById("password");
+	const confirmPasswordField = document.getElementById("confirmpassword");
 
     if (showPasswordToggle) {
         showPasswordToggle.addEventListener("click", function() {
             passwordField.setAttribute("type", "text");
+			if (confirmPasswordField) confirmPasswordField.setAttribute("type", "text");
             showPasswordToggle.style.display = "none";
             hidePasswordToggle.style.display = "inline";
         });
@@ -557,6 +559,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hidePasswordToggle) {
         hidePasswordToggle.addEventListener("click", function() {
             passwordField.setAttribute("type", "password");
+			if (confirmPasswordField) confirmPasswordField.setAttribute("type", "password");
             showPasswordToggle.style.display = "inline";
             hidePasswordToggle.style.display = "none";
         });
